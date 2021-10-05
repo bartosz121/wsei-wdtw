@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #FFECD1;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    text-align: center;
+}
+
+.logo {
+    text-transform: uppercase;
+    color: #FFECD1;
+}
+
+.logo h1 {
+    font-size: 3rem;
+}
+
+/* Header */
+#header{
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header{
+    min-height: 8vh;
+    background-color: rgba(255, 125, 0, 0.9);
+}
+
+#header .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+
+#header .navbar .logo {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#header .navbar-items ul{
+    list-style: none;
+    position: absolute;
+    background: linear-gradient( rgba(255, 125, 0, 1), rgba(120, 41, 15, 1));
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .4s ease left;
+}
+
+#header .navbar ul.open{
+    left: 0;
+}
+
+#header .navbar a{
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: #FFECD1;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+#header .navbar a:hover{
+    color: #15616D;
+}
+
+#header .menu-icon {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    border: 4px solid white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#header .menu-icon-bars{
+    width: 30px;
+    height: 5px;
+    background: white;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+#header .menu-icon-bars::before,
+#header .menu-icon-bars::after{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background: white;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+#header .menu-icon-bars::before{
+    transform: translateY(-16px);
+}
+
+#header .menu-icon-bars::after{
+    transform: translateY(16px);
+}
+
+/* animacja */
+#header .menu-icon.open .menu-icon-bars{
+    transform: translateX(-50px);
+    background: transparent;
+}
+
+#header .menu-icon.open .menu-icon-bars::before{
+    transform: rotate(45deg) translate(35px, -35px);
+}
+
+#header .menu-icon.open .menu-icon-bars::after{
+    transform: rotate(-45deg) translate(35px, 35px);
+}
+
+
+/* Main */
+#main {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/home-bg.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+
+#main .main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#main h1,
+#main h2 {
+    display: block;
+    width: fit-content;
+    position: relative;
+    color: #FFECD1;
+}
+
+#main h1 {
+    font-size: 4rem;
+}
+
+#main h2 {
+    font-size: 3rem;
+}
+
+#main a {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 2px solid #15616D;
+    font-weight: bold;
+    color: #15616D;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+#main a:hover {
+    color: #FFECD1;
+    background-color: #001524;
+    border-color: #001524;
+}
+
+/* Menu */
+#menu {
+    background-color: rgba(255, 125, 0, 0.8);
+}
+
+#menu .menu {
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+.menu-header p {
+    font-size: 1.4rem;
+    margin: 20px 10px;
+}
+
+.menu-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 5%;
+    margin: 10px 0;
+    border-radius: 40px;
+    background-size: cover;
+    box-shadow: 0px 0px 5px 0px #78290F;
+    transition: .3s ease box-shadow;
+}
+
+.menu-item:hover{
+    box-shadow: 0px 0px 15px 0px #78290F;
+}
+
+.menu-item h2 {
+    -webkit-text-stroke: 1px #001524;
+    color: #FFECD1;
+    font-size: 2.4rem;
+}
+
+.icon-and-title {
+    display: inline-flex;
+}
+
+.menu-item-info {
+    width: 97%;
+}
+
+#cena {
+    float: right;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+#skladniki {
+    float: left;
+    font-size: 1.5rem;
+}
+
+/* nie moglem znalesc sposobu zeby do klasy menu-item dodac sam gradient a do kazdego itemu pozniej inne zdjecie */
+#item1 {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/pizza1.jpg);
+}
+
+#item2 {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/pizza2.jpg);
+}
+
+#item3 {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/pizza3.jpg);
+}
+
+#item4 {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/pizza4.jpg);
+}
+
+#item5 {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/pizza5.jpg);
+}
+
+#item6 {
+    background: linear-gradient(rgba(120, 41, 15, 0.524), rgba(255, 125, 0, 0.5)), url(./img/pizza6.jpg);
+}
+
+/* Dostawa */
+#dostawa {
+    background-color: rgba(21, 97, 109, 0.7);
+}
+
+#dostawa .dostawa {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+}
+
+#dostawa .left-side {
+    max-width: 350px;
+    max-height: 360px;
+}
+
+.left-side img {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    object-fit: contain;
+    margin-top: 15px;
+}
+
+#dostawa .right-side {
+    width: 100%;
+}
+
+.right-side h2 {
+    font-size: 2.1rem;
+    margin-bottom: 15px;
+}
+
+/* Kontakt */
+#kontakt {
+    background-color: rgba(19, 83, 129, 0.8);
+}
+
+#kontakt .kontakt {
+    flex-direction: column;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+#kontakt .kontakt-items {
+    width: fit-content;
+}
+
+#kontakt .kontakt-item {
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px 5px #001524;
+    transition: .3s ease box-shadow;
+}
+
+#kontakt .kontakt-item:hover {
+    box-shadow: 10px 10px 15px 10px #001524;
+}
+
+#kontakt img {
+    width: 50px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#kontakt .kontakt-info h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #FFECD1;
+}
+
+.kontakt-info h2 {
+    color: #000;
+}
+
+/* Footer */
+#footer {
+    background: linear-gradient(rgba(255, 125, 0, 0.8), rgba(120, 41, 15, 0.524))
+}
+
+#footer .footer {
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+#footer .godziny-otwarcia{
+    color: #FFECD1;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+#footer .godziny-otwarcia ul{
+    list-style: none;
+}
+
+#footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#footer .icon {
+    margin: 5px 15px;
+}
+
+#footer .icon img {
+    width: 50px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    transition: transform .4s;
+    object-fit: contain;
+}
+
+#footer .icon img:hover {
+    transform: scale(1.8);
+}
+
+
+
+/* Media Query */
+@media (min-width: 320px) and (max-width: 410px) {
+    #main h2 {
+        font-size: 2.2rem;
+    }
+
+    #main a {
+        font-size: 1.5rem;
+    }
+  }
+
+@media only screen and (min-width:768px){
+    .section-title{
+        font-size: 7rem;
+    }
+
+    #main .main h1{
+        font-size: 10rem;
+    }
+
+    #main .main h2{
+        font-size: 6rem;
+    }
+
+    #main a{
+        font-size: 4rem;
+    }
+
+    /* Menu */
+    .menu-header p{
+        font-size: 2rem;
+    }
+
+    /* Dostawa */
+    #dostawa .left-side {
+        max-width: 600px;
+        max-height: 400px;
+    }
+
+    .right-side h2{
+        font-size: 2.5rem;
+    }
+
+    /* Footer */
+    #footer .wrapper{
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    #footer .godziny-otwarcia{
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (min-width:854px){
+    /* Kontakt */
+    #kontakt .kontakt{
+        flex-direction: column;
+        padding: 100px 0;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #kontakt .kontakt-items{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 20px;
+        margin: 0;
+    }
+
+    #kontakt .kontakt-info h1 {
+        font-size: 2.8rem;
+    }
+
+    #kontakt .kontakt-info h2 {
+        font-size: 2.3rem;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    #header .menu-icon{
+        display: none;
+    }
+
+    #header .navbar-items ul {
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background: transparent;
+    }
+
+    #header .navbar-items li {
+        display: inline-block;
+    }
+
+    #header .navbar-items a {
+        font-size: 1.5rem;
+        font-weight: normal;
+    }
+}
